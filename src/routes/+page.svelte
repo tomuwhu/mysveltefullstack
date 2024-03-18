@@ -1,6 +1,6 @@
 <script>
     let res, id
-	let statedata = ''
+	let statedata = {value : '---'}
 	async function xget(st) {
         const response = await fetch("/api/getstate", {
             method: 'POST',
