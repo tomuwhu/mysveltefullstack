@@ -1,6 +1,6 @@
 <script>
-    let res, id
-	let statedata = {value : '---'}
+    let res, eng
+	let hun = {value : '---'}
 	async function xget(st) {
         const response = await fetch("/api/getstate", {
             method: 'POST',
@@ -10,23 +10,25 @@
             }
         })
         res =  await response.json()
-        statedata = res[0]
+        hun = res[0]
 	}
 	export let data
 </script>
 
 <h1>Szótár</h1>
-<select bind:value={id} on:change={() => xget(id)}>
-    <option selected>----</option>
+<select bind:value={eng} on:change={() => xget(eng)}>
+    <option selected>--- </option>
     {#each data.data as state}
     <option>{state.name}</option>
     {/each}
 </select>
-{#if statedata}
-    <div class="e">{statedata.value}</div>
-{/if}
+<div class="e"><b>{eng}</b>: <i>{hun.value}</i></div>
+
 
 <style>
+    b {
+        color: rgb(64, 94, 118);
+    }
     div.e {
         font-size: 30px;
     }
