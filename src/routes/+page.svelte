@@ -27,7 +27,7 @@
 
 <style>
     b {
-        color: rgb(64, 94, 118);
+        color: rgb(82, 92, 31);
     }
     div.e {
         font-size: 30px;
@@ -40,6 +40,7 @@
         font-size: 90%;
     }
     :global(body) {
+        color: rgb(15, 49, 94);
         background-color: blanchedalmond;
         text-align: center;
     }
