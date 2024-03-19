@@ -1,16 +1,12 @@
 <script>
     let res, eng
-	let hun = {value : '---'}
+	let hun = {value: '---'}
 	async function xget(name) {
         const response = await fetch("/api/getstate", {
-            method: 'POST',
-            body: JSON.stringify({name}),
-            headers: {
-                'content-type': 'application/json'
-            }
+            method: 'POST', body: JSON.stringify({name}),
+            headers: { 'content-type': 'application/json' }
         })
-        res = await response.json()
-        hun = res[0]
+        hun = (await response.json())[0]
 	}
 	export let data
 </script>
