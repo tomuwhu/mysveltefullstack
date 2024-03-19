@@ -18,7 +18,6 @@
 </select>
 <div class="e"><b>{eng}</b>: <i>{hun.value}</i></div>
 
-
 <style>
     b {
         color: rgb(82, 92, 31);
