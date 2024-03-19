@@ -1,8 +1,8 @@
-import { mysqlconnFn } from "$lib/db/mysql";
+import { sqc } from "$lib/db/mysql";
 export async function load() {
-  let Q = await mysqlconnFn();
+  let sql = await sqc();
   try {
-    let results = await Q
+    let results = await sql
       .query("SELECT name FROM docstore;")
       .then(([rows, fields]) => rows)
     return { data: results }

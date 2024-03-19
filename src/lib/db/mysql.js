@@ -1,10 +1,10 @@
 import mysql from "mysql2/promise";
 
-let mysqlconn = null;
+let sql = null;
 
-export function mysqlconnFn() {
-  if (!mysqlconn) {
-    mysqlconn = mysql.createConnection({
+export function sqc() {
+  if (!sql) {
+    sql = mysql.createConnection({
       host: "localhost",
       user: "root",
       password: "",
@@ -12,5 +12,5 @@ export function mysqlconnFn() {
     });
   }
 
-  return mysqlconn;
+  return sql;
 }
