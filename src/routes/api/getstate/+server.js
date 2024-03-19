@@ -5,7 +5,7 @@ export async function POST({ request }) {
   const { st } = await request.json();
   let Q = await mysqlconnFn();
   let results = await Q
-    .query(`SELECT * FROM docstore WHERE name = '${st}'`)
+    .query(`SELECT * FROM docstore WHERE name = '${st}' ORDER BY name`)
     .then(([rows, fields]) => rows)
   return json(results);
 }
